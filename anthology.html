@@ -174,7 +174,7 @@ nav {
 
 .hero-title em {
   font-style: italic;
-  color: var(--gold-light);
+  color: var(--danger-red);
 }
 
 .hero-tagline {
@@ -218,7 +218,7 @@ nav {
   font-family: var(--sans);
 }
 
-.btn-gold:hover { background: var(--gold-light); }
+.btn-gold:hover { background: var(--danger-red); color: var(--cream); }
 
 .btn-outline {
   display: inline-block;
@@ -235,8 +235,9 @@ nav {
 }
 
 .btn-outline:hover {
-  background: var(--gold);
-  color: var(--night);
+  background: var(--danger-red);
+  color: var(--cream);
+  border-color: var(--danger-red);
 }
 
 /* Hero Right */
@@ -913,6 +914,10 @@ footer .footer-brand {
   .series-title { flex: 1 1 100%; }
 }
 
+
+.section-head h2::after { content: ''; display: block; width: 40px; height: 2px; background: var(--danger-red); margin-top: 0.85rem; }
+
+.nav-links a.active { color: var(--danger-red); }
 </style>
 </head>
 <body>
@@ -921,7 +926,7 @@ footer .footer-brand {
 <nav>
   <a class="nav-brand" href="anthology.html">Johanna Marica Leiner <span>/ The Deception Anthology</span></a>
   <ul class="nav-links">
-    <li><a href="anthology.html">Anthology</a></li>
+    <li><a href="anthology.html" class="active">Anthology</a></li>
     <li><a href="season1.html">Season One</a></li>
     <li><a href="season2.html">Season Two</a></li>
     <li><a href="contact.html">Contact</a></li>

@@ -99,7 +99,7 @@ nav {
 }
 
 .nav-links a:hover,
-.nav-links a.active { color: var(--gold); }
+.nav-links a.active { color: var(--danger-red); }
 
 /* HERO */
 .page-hero {
@@ -140,7 +140,7 @@ nav {
 
 .page-hero-inner h1 em {
   font-style: italic;
-  color: var(--gold-light);
+  color: var(--danger-red);
 }
 
 .page-hero-inner p {
@@ -216,7 +216,7 @@ nav {
   transition: border-color 0.2s;
 }
 
-.contact-value a:hover { border-color: var(--gold-light); }
+.contact-value a:hover { color: var(--danger-red); border-color: var(--danger-red); }
 
 .contact-note {
   margin-top: 1.75rem;
@@ -453,7 +453,7 @@ footer .footer-brand {
   transition: background 0.2s, color 0.2s;
 }
 
-.btn-send:hover { background: var(--gold-light); border-color: var(--gold-light); }
+.btn-send:hover { background: var(--danger-red); border-color: var(--danger-red); color: var(--cream); }
 .btn-send:disabled { opacity: 0.5; cursor: default; }
 
 .form-status {
@@ -533,6 +533,8 @@ footer .footer-brand {
   .series-title { flex: 1 1 100%; }
 }
 
+
+.message-heading::after { content: ''; display: block; width: 40px; height: 2px; background: var(--danger-red); margin-top: 0.85rem; }
 </style>
 </head>
 <body>
