@@ -177,7 +177,7 @@ nav {
   color: var(--text-body);
   margin: 2.5rem 0;
   padding-left: 1.5rem;
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid var(--danger-red);
   line-height: 1.5;
   max-width: 440px;
 }
@@ -854,6 +854,57 @@ footer .footer-brand {
 .hero-left > *:nth-child(4) { animation-delay: 0.5s; }
 .hero-left > *:nth-child(5) { animation-delay: 0.65s; }
 
+
+/* =============================================
+   RESPONSIVE  —  tablet & mobile   (added for mobile-friendliness)
+   ============================================= */
+@media (max-width: 820px) {
+  /* collapse every multi-column grid (class-based) to a single column */
+  #home, .spec-grid, .anthology-header, .seasons-grid, .about-layout,
+  .contact-layout, .style-pillars, .contact-main, .statement-band {
+    grid-template-columns: 1fr !important;
+  }
+  /* collapse ANY inline grid too (catches repeat(3,1fr), 280px 1fr, etc.) */
+  [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+
+  /* drop dividing borders that become stray vertical lines once stacked */
+  .hero-left, .contact-left, .contact-right, .statement-pull,
+  .season-card, .season-card:nth-child(even) { border-right: none !important; }
+
+  /* tame oversized desktop padding so content fits a phone screen */
+  nav { padding: 0 1.5rem !important; }
+  .nav-brand span { display: none; }
+  .nav-links { gap: 1.5rem; }
+  .hero-left { padding: 7rem 1.5rem 3rem !important; }
+  .section-head { padding: 3.5rem 1.5rem 2.25rem !important; gap: 1rem; }
+  .page-hero-inner { padding: 5rem 1.5rem 2.5rem !important; }
+  .anthology-header, .statement-band { padding: 2.5rem 1.5rem !important; gap: 2rem !important; }
+  .season-card { padding: 2.5rem 1.5rem !important; }
+  .spec-cell { padding: 2rem 1.5rem !important; gap: 1.25rem !important; }
+  .contact-left, .contact-right { padding: 3rem 1.5rem !important; }
+
+  /* tame oversized inline horizontal padding on the big blocks */
+  [style*="padding: 4rem"], [style*="padding: 5rem"], [style*="padding: 3rem 4rem"] {
+    padding-left: 1.5rem !important; padding-right: 1.5rem !important;
+  }
+
+  /* footer stacks neatly */
+  footer { flex-direction: column; gap: 0.6rem; text-align: center; padding: 1.75rem 1.5rem !important; }
+}
+
+@media (max-width: 560px) {
+  /* nav: hide brand, spread the links evenly across the bar */
+  .nav-brand { display: none; }
+  nav { padding: 0 1rem !important; }
+  .nav-links { width: 100%; justify-content: space-between; gap: 0.4rem; }
+  .nav-links a { font-size: 9px; letter-spacing: 0.1em; }
+
+  /* the S1–S5 rows: stack number/title, wrap year + badge below */
+  .series-item { display: flex !important; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 0.75rem; }
+  .series-n { width: 24px; }
+  .series-title { flex: 1 1 100%; }
+}
+
 </style>
 </head>
 <body>
@@ -948,7 +999,7 @@ footer .footer-brand {
         </div>
         <p style="font-size: 14px; color: var(--text-mid); line-height: 1.9; max-width: 700px; margin-bottom: 0; font-style: italic;">Never moves far. Never exposed. Read a dossier on Abigail before her interview. Told an unknown caller she was there to find what she finds. Wins everything. Feels smaller for it.</p>
       </div>
-      <div style="background: var(--surface); padding: 2rem; border-left: 2px solid rgba(139,46,46,0.3);">
+      <div style="background: var(--surface); padding: 2rem;">
         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
           <svg height="42" viewBox="0 0 40 44" fill="#f05a4c" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;display:inline-block"><rect x="18.5" y="2" width="3" height="10"/><rect x="14.5" y="4.5" width="11" height="3"/><path d="M20 12 C10 13 9 23 15 27 L25 27 C31 23 30 13 20 12 Z"/><path d="M12 27 L28 27 L32 42 L8 42 Z"/></svg>
           <div><p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight:400;">The King</p><p style="font-family: var(--serif); font-size: 17px; color: var(--cream);">Sebastian Carter</p></div>
@@ -1004,37 +1055,37 @@ footer .footer-brand {
   <div style="display: grid; grid-template-columns: 1fr 1fr;">
     <div style="background: var(--surface); padding: 4rem; display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
       <p class="eyebrow">Selected Dialogue</p>
-      <div style="padding: 1.5rem; border-left: 2px solid rgba(201,169,110,0.3); background: var(--surface-mid);">
+      <div style="padding: 1.5rem; border-left: 2px solid var(--danger-red); background: var(--surface-mid);">
         <p style="font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 0.75rem;">I signed what I was given. I saw what I wasn't shown. I found what someone died to leave for me. And now I am going to correct it.</p>
         <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);">Abigail V.O. — EP209</p>
       </div>
-      <div style="padding: 1.5rem; border-left: 2px solid rgba(201,169,110,0.3); background: var(--surface-mid);">
+      <div style="padding: 1.5rem; border-left: 2px solid var(--danger-red); background: var(--surface-mid);">
         <p style="font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 0.75rem;">This isn't embezzlement. This is architecture.</p>
         <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);">Ivy Wilson — EP209</p>
       </div>
-      <div style="padding: 1.5rem; border-left: 2px solid rgba(201,169,110,0.3); background: var(--surface-mid);">
+      <div style="padding: 1.5rem; border-left: 2px solid var(--danger-red); background: var(--surface-mid);">
         <p style="font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 0.75rem;">She knew she wasn't coming back.</p>
         <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);">Abigail — on Lena — EP209</p>
       </div>
-      <div style="padding: 1.5rem; border-left: 2px solid rgba(201,169,110,0.3); background: var(--surface-mid);">
+      <div style="padding: 1.5rem; border-left: 2px solid var(--danger-red); background: var(--surface-mid);">
         <p style="font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 0.75rem;">Truth doesn't win. Power does.</p>
         <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);">Unidentified voice — parking garage — EP207</p>
       </div>
     </div>
     <div style="padding: 4rem; background: var(--deep); display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
-      <div style="padding: 1.5rem; border-left: 2px solid rgba(201,169,110,0.15); background: var(--surface);">
+      <div style="padding: 1.5rem; border-left: 2px solid var(--danger-red); background: var(--surface);">
         <p style="font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 0.75rem;">Presence isn't access.</p>
         <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);">Lukas Moreau — EP201</p>
       </div>
-      <div style="padding: 1.5rem; border-left: 2px solid rgba(201,169,110,0.15); background: var(--surface);">
+      <div style="padding: 1.5rem; border-left: 2px solid var(--danger-red); background: var(--surface);">
         <p style="font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 0.75rem;">Abigail — where were you all my life?</p>
         <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);">Blake Keaton — EP208</p>
       </div>
-      <div style="padding: 1.5rem; border-left: 2px solid rgba(201,169,110,0.15); background: var(--surface);">
+      <div style="padding: 1.5rem; border-left: 2px solid var(--danger-red); background: var(--surface);">
         <p style="font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 0.75rem;">She keeps stopping. Like the telly when the signal goes. And her eyes go somewhere else.</p>
         <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);">Benedict Carrington — EP209</p>
       </div>
-      <div style="padding: 1.5rem; border-left: 2px solid rgba(201,169,110,0.15); background: var(--surface);">
+      <div style="padding: 1.5rem; border-left: 2px solid var(--danger-red); background: var(--surface);">
         <p style="font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 0.75rem;">Letting him go wasn't leadership. It was obedience. And I've never hated obedience more.</p>
         <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);">Leo Roberts V.O. — EP209</p>
       </div>
@@ -1054,4 +1105,3 @@ footer .footer-brand {
 
 </body>
 </html>
-</body></html>
