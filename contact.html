@@ -11,20 +11,21 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --night:       #0d0c0b;
-  --deep:        #1a1714;
-  --surface:     #231f1b;
-  --surface-mid: #2e2925;
+  --night:       #0a0705;
+  --deep:        #16100a;
+  --surface:     #1e1610;
+  --surface-mid: #2a1f16;
   --border:      #3d3830;
   --border-light:#524b42;
   --gold:        #c9a96e;
   --gold-light:  #dfc08e;
   --gold-pale:   #f0ddb8;
+  --danger-red:  #f05a4c;
   --cream:       #f5f0e8;
   --cream-mid:   #e8e0d0;
-  --text-body:   #b8ae9e;
-  --text-mid:    #8a8070;
-  --text-muted:  #5a5248;
+  --text-body:   #c2b8a4;
+  --text-mid:    #c2b8a4;
+  --text-muted:  #c2b8a4;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans:  'Jost', sans-serif;
 }
@@ -62,7 +63,7 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(13, 12, 11, 0.96);
+  background: rgba(10, 7, 5, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -152,7 +153,7 @@ nav {
   line-height: 1.6;
   max-width: 520px;
   padding-left: 1.5rem;
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid var(--danger-red);
 }
 
 /* CONTACT LAYOUT */
@@ -432,7 +433,7 @@ footer .footer-brand {
     <div class="contact-item">
       <p class="contact-type">Website</p>
       <p class="contact-value">
-        <a href="https://www.jmleiner-tv.com">www.jmleiner-tv.com</a>
+        <a href="https://jmleiner-tv.com">jmleiner-tv.com</a>
       </p>
     </div>
 
