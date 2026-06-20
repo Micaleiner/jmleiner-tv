@@ -433,6 +433,14 @@ footer .footer-brand {
 .field input:focus,
 .field textarea:focus { border-color: var(--gold); }
 
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover,
+.field input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--surface) inset !important;
+  -webkit-text-fill-color: var(--cream) !important;
+  border: 1px solid var(--border) !important;
+}
+
 .field textarea { resize: vertical; min-height: 140px; }
 
 .field input::placeholder,
@@ -466,6 +474,47 @@ footer .footer-brand {
 .form-status.err { color: var(--danger-red); }
 
 .hp-field { display: none !important; }
+
+.field-error {
+  display: block;
+  font-size: 12px;
+  color: var(--danger-red);
+  margin-top: 4px;
+  min-height: 1em;
+}
+
+#form-success,
+#form-error {
+  min-height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  transition: all 0.3s ease !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+#form-success:not(:empty),
+#form-error:not(:empty) {
+  min-height: auto !important;
+  max-height: 200px !important;
+  opacity: 1 !important;
+  margin-top: 1.25rem !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+#form-success:not(:empty) {
+  color: var(--gold-light) !important;
+}
+
+#form-error:not(:empty) {
+  color: var(--danger-red) !important;
+}
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -541,10 +590,6 @@ body { overflow-x: hidden; }
 #request-materials { scroll-margin-top: 80px; }
 
 </style>
-<link rel="icon" href="./favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="./assets/favicon_ml.png">
-<link rel="shortcut icon" href="./favicon.ico">
-<link rel="apple-touch-icon" href="./assets/favicon_ml.png">
 </head>
 <body>
 
@@ -635,32 +680,31 @@ body { overflow-x: hidden; }
       or full scripts.
     </p>
 
-    <form id="contact-form" novalidate>
-      <!-- ===== SETUP: replace YOUR_ACCESS_KEY_HERE with the key from web3forms.com ===== -->
-      <input type="hidden" name="access_key" id="access_key" value="YOUR_ACCESS_KEY_HERE">
-      <input type="hidden" name="subject" value="New materials request from jmleiner-tv.com">
-      <input type="hidden" name="from_name" value="jmleiner-tv.com">
+    <div data-fs-success id="form-success">
+      ✓ Thank you! Your inquiry has been sent. We typically respond within five working days.
+    </div>
+    <div data-fs-error id="form-error"></div>
 
-      <!-- spam honeypot: humans never see or fill this -->
-      <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
-
+    <form id="contact-form" data-fs-form>
       <div class="field">
         <label for="name">Your name</label>
-        <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+        <input type="text" id="name" name="name" placeholder="Jane Doe" data-fs-field required>
+        <span data-fs-error="name" class="field-error"></span>
       </div>
 
       <div class="field">
         <label for="email">Your email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        <input type="email" id="email" name="email" placeholder="you@example.com" data-fs-field required>
+        <span data-fs-error="email" class="field-error"></span>
       </div>
 
       <div class="field">
         <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Your message…" required></textarea>
+        <textarea id="message" name="message" placeholder="Your message…" data-fs-field required></textarea>
+        <span data-fs-error="message" class="field-error"></span>
       </div>
 
-      <button type="submit" class="btn-send" id="send-btn">Send Inquiry</button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      <button type="submit" class="btn-send" data-fs-submit-btn>Send Inquiry</button>
     </form>
 
     <p class="contact-note">
@@ -680,75 +724,10 @@ body { overflow-x: hidden; }
   <p>Registered with the U.S. Copyright Office</p>
 </footer>
 <script>
-(function () {
-  var form   = document.getElementById('contact-form');
-  var status = document.getElementById('form-status');
-  var btn    = document.getElementById('send-btn');
-  var RECIPIENT = 'mica@jmleiner-tv.com';
-  var PLACEHOLDER = 'YOUR_ACCESS_KEY_HERE';
-
-  function setStatus(msg, kind) {
-    status.textContent = msg;
-    status.className = 'form-status' + (kind ? ' ' + kind : '');
-  }
-
-  function openMailFallback(name, email, message) {
-    var subject = encodeURIComponent('Materials inquiry from ' + (name || 'a reader'));
-    var body = encodeURIComponent(
-      'Name: ' + name + '\nEmail: ' + email + '\n\n' + message
-    );
-    window.location.href = 'mailto:' + RECIPIENT + '?subject=' + subject + '&body=' + body;
-  }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    var name    = form.name.value.trim();
-    var email   = form.email.value.trim();
-    var message = form.message.value.trim();
-    var key     = document.getElementById('access_key').value.trim();
-
-    if (!name || !email || !message) {
-      setStatus('Please fill in your name, email, and a message.', 'err');
-      return;
-    }
-
-    // Not configured yet → open the reader's email app, pre-filled.
-    if (key === PLACEHOLDER || !key) {
-      setStatus('Opening your email app…', 'ok');
-      openMailFallback(name, email, message);
-      return;
-    }
-
-    btn.disabled = true;
-    setStatus('Sending…', '');
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: key,
-        subject: 'New materials request from jmleiner-tv.com',
-        name: name, email: email, message: message
-      })
-    })
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      if (data.success) {
-        form.reset();
-        setStatus('Thank you — your message has been sent.', 'ok');
-      } else {
-        setStatus('Something went wrong. Please email ' + RECIPIENT + ' directly.', 'err');
-      }
-    })
-    .catch(function () {
-      setStatus('Could not send. Opening your email app instead…', 'err');
-      openMailFallback(name, email, message);
-    })
-    .finally(function () { btn.disabled = false; });
-  });
-})();
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xqeorjbg' });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
