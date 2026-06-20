@@ -63,14 +63,6 @@ body {
   font-weight: 400;
 }
 
-.section-number {
-  font-family: var(--serif);
-  font-size: 30px;
-  font-style: italic;
-  color: var(--danger-red);
-  letter-spacing: 0.05em;
-}
-
 h1, h2, h3, h4 {
   font-family: var(--serif);
   font-weight: 300;
@@ -125,903 +117,13 @@ nav {
 }
 
 .nav-links a:hover { color: var(--danger-red); }
-
-
-/* =============================================
-   HERO — SECTION 01
-   ============================================= */
-#home {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  padding-top: 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-#home::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 20% 50%, rgba(201,169,110,0.04) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 80% 20%, rgba(139,46,46,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.hero-left {
-  padding: 8rem 4rem 6rem 4rem;
-  border-right: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
-.hero-left .eyebrow {
-  margin-bottom: 2.5rem;
-}
-
-.hero-title {
-  font-size: clamp(52px, 6.5vw, 88px);
-  font-weight: 300;
-  letter-spacing: -0.015em;
-  color: var(--cream);
-  margin-bottom: 0.15em;
-  line-height: 1.0;
-}
-
-.hero-title em {
-  font-style: italic;
-  color: var(--danger-red);
-}
-
-.hero-tagline {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--text-body);
-  margin: 2.5rem 0;
-  padding-left: 1.5rem;
-  border-left: 2px solid var(--danger-red);
-  line-height: 1.5;
-  max-width: 440px;
-}
-
-.hero-desc {
-  font-size: 14px;
-  color: var(--text-mid);
-  line-height: 1.85;
-  max-width: 420px;
-  margin-bottom: 3.5rem;
-  font-weight: 300;
-}
-
-.btn-row {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn-gold {
-  display: inline-block;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: var(--night);
-  background: var(--gold);
-  padding: 13px 32px;
-  transition: background 0.25s;
-  font-family: var(--sans);
-}
-
-.btn-gold:hover { background: var(--danger-red); color: var(--cream); }
-
-.btn-outline {
-  display: inline-block;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: var(--gold);
-  background: transparent;
-  border: 1px solid var(--gold);
-  padding: 12px 32px;
-  transition: background 0.25s, color 0.25s;
-  font-family: var(--sans);
-}
-
-.btn-outline:hover {
-  background: var(--danger-red);
-  color: var(--cream);
-  border-color: var(--danger-red);
-}
-
-/* Hero Right */
-.hero-right {
-  padding: 8rem 4rem 6rem 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: var(--deep);
-}
-
-.candlestick-pull {
-  position: relative;
-  margin-bottom: 3rem;
-  padding: 2.5rem;
-  border: 1px solid var(--border);
-  background: var(--surface);
-}
-
-.candlestick-pull::before {
-  content: '\201C';
-  font-family: var(--serif);
-  font-size: 80px;
-  line-height: 1;
-  color: var(--gold);
-  opacity: 0.3;
-  position: absolute;
-  top: 0.5rem;
-  left: 1.5rem;
-}
-
-.candlestick-pull blockquote {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--cream);
-  line-height: 1.45;
-  margin-bottom: 1.25rem;
-  padding-top: 1rem;
-}
-
-.candlestick-pull cite {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-style: normal;
-}
-
-.spec-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  margin-bottom: 2rem;
-}
-
-.spec-cell {
-  background: var(--surface);
-  padding: 1.25rem 1.5rem;
-}
-
-.spec-label {
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 5px;
-  font-weight: 400;
-}
-
-.spec-value {
-  font-family: var(--serif);
-  font-size: 15px;
-  color: var(--cream-mid);
-}
-
-.comparables {
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.8;
-  border-top: 1px solid var(--border);
-  padding-top: 1.5rem;
-}
-
-.comparables strong {
-  color: var(--text-mid);
-  font-weight: 400;
-  letter-spacing: 0.08em;
-}
-
-/* =============================================
-   PRINCIPLE BAND
-   ============================================= */
-.principle-band {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 3rem 4rem;
-  display: flex;
-  gap: 4rem;
-  align-items: center;
-}
-
-.principle-band .eyebrow {
-  flex-shrink: 0;
-  width: 140px;
-}
-
-.principle-band p {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--cream);
-  line-height: 1.45;
-}
-
-.principle-band p em {
-  color: var(--gold-light);
-  font-style: italic;
-}
-
-/* =============================================
-   PROJECTS — SECTION 02
-   ============================================= */
-#projects {
-  padding: 0;
-}
-
-.section-head {
-  padding: 5rem 4rem 3.5rem;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: baseline;
-  gap: 2rem;
-}
-
-.section-head h2 {
-  font-size: clamp(40px, 5vw, 64px);
-  font-weight: 300;
-  color: var(--cream);
-}
-
-/* Anthology Banner */
-.anthology-header {
-  background: var(--surface);
-  padding: 4rem;
-  border-bottom: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-}
-
-.anthology-header-left .eyebrow {
-  margin-bottom: 1.5rem;
-}
-
-.anthology-header-left h3 {
-  font-size: 44px;
-  color: var(--cream);
-  margin-bottom: 0.4em;
-}
-
-.anthology-header-left .sub-italic {
-  font-family: var(--serif);
-  font-size: 18px;
-  font-style: italic;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.anthology-header-left p {
-  font-size: 14px;
-  color: var(--text-mid);
-  line-height: 1.85;
-}
-
-.series-list {
-  list-style: none;
-  border: 1px solid var(--border);
-}
-
-.series-item {
-  display: grid;
-  grid-template-columns: 32px 1fr auto auto;
-  gap: 1rem;
-  align-items: baseline;
-  padding: 1.1rem 1.5rem;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.2s;
-}
-
-.series-item:last-child { border-bottom: none; }
-.series-item:hover { background: var(--surface-mid); }
-
-.series-n {
-  font-family: var(--serif);
-  font-size: 12px;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-.series-title {
-  font-family: var(--serif);
-  font-size: 17px;
-  font-style: italic;
-  color: var(--cream);
-}
-
-.series-year {
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-}
-
-.series-badge {
-  font-size: 9px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  font-weight: 400;
-}
-
-.badge-complete {
-  background: rgba(201,169,110,0.15);
-  color: var(--gold);
-  border: 1px solid rgba(201,169,110,0.3);
-}
-
-.badge-dev {
-  background: rgba(46,107,107,0.15);
-  color: #6bbfbf;
-  border: 1px solid rgba(46,107,107,0.3);
-}
-
-.badge-reg {
-  background: rgba(90,82,72,0.3);
-  color: var(--text-mid);
-  border: 1px solid var(--border);
-}
-
-/* Season Cards */
-.seasons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.season-card {
-  padding: 3.5rem 4rem;
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.season-card:nth-child(even) {
-  border-right: none;
-}
-
-.season-meta-top {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.season-card h3 {
-  font-size: 30px;
-  color: var(--cream);
-  margin-bottom: 0.3em;
-}
-
-.season-sub {
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 400;
-  margin-bottom: 1.75rem;
-  display: block;
-}
-
-.season-card p {
-  font-size: 14px;
-  color: var(--text-mid);
-  line-height: 1.85;
-  margin-bottom: 1rem;
-}
-
-.season-card p:last-of-type {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 15px;
-  color: var(--text-body);
-  margin-bottom: 0;
-}
-
-.season-footer {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  gap: 2.5rem;
-}
-
-.sf-label {
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 4px;
-  font-weight: 400;
-}
-
-.sf-value {
-  font-size: 13px;
-  color: var(--text-body);
-}
-
-/* =============================================
-   ABOUT — SECTION 03
-   ============================================= */
-#about {
-  border-top: 1px solid var(--border);
-}
-
-.about-layout {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  min-height: 70vh;
-}
-
-.about-sidebar {
-  background: var(--surface);
-  padding: 4rem 3rem;
-  border-right: 1px solid var(--border);
-}
-
-.about-sidebar .section-head {
-  padding: 0 0 3rem;
-  border-bottom: none;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.about-facts {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.fact-row {
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.fact-row:first-child { border-top: 1px solid var(--border); }
-
-.fact-label {
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  font-weight: 400;
-  margin-bottom: 5px;
-}
-
-.fact-value {
-  font-size: 13px;
-  color: var(--text-body);
-  line-height: 1.6;
-}
-
-.about-main {
-  padding: 4rem 4rem 4rem 5rem;
-}
-
-.bio-intro {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 300;
-  color: var(--cream);
-  line-height: 1.5;
-  margin-bottom: 2.5rem;
-  max-width: 600px;
-}
-
-.bio-intro em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-
-.gold-rule {
-  width: 48px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.5;
-  margin: 2rem 0;
-}
-
-.bio-body {
-  font-size: 14px;
-  color: var(--text-mid);
-  line-height: 1.9;
-  max-width: 580px;
-}
-
-.bio-body p { margin-bottom: 1.25rem; }
-.bio-body p:last-child { margin-bottom: 0; }
-
-.style-pillars {
-  margin-top: 3rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-}
-
-.pillar .pillar-head {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 400;
-  margin-bottom: 0.75rem;
-}
-
-.pillar p {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-/* =============================================
-   CONTACT — SECTION 04
-   ============================================= */
-#contact {
-  border-top: 1px solid var(--border);
-}
-
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 55vh;
-}
-
-.contact-left {
-  padding: 5rem 4rem;
-  border-right: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.contact-left .section-head {
-  padding: 0 0 2rem;
-  border-bottom: none;
-}
-
-.contact-left > p {
-  font-size: 14px;
-  color: var(--text-mid);
-  line-height: 1.85;
-  max-width: 360px;
-  margin-bottom: 3rem;
-}
-
-.contact-item {
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--border);
-}
-
-.contact-item:last-child { border-bottom: 1px solid var(--border); }
-
-.contact-type {
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  font-weight: 400;
-  margin-bottom: 6px;
-}
-
-.contact-value {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 300;
-  color: var(--cream);
-}
-
-.contact-value a {
-  color: var(--gold-light);
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-  transition: border-color 0.2s;
-}
-
-.contact-value a:hover {
-  border-color: var(--gold-light);
-}
-
-.contact-right {
-  padding: 5rem 4rem;
-  background: var(--surface);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.available-list {
-  list-style: none;
-  margin-top: 1.5rem;
-}
-
-.available-item {
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.available-item:first-child { border-top: 1px solid var(--border); }
-
-.av-season {
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  font-weight: 400;
-  margin-bottom: 4px;
-}
-
-.av-title {
-  font-family: var(--serif);
-  font-size: 17px;
-  font-style: italic;
-  color: var(--cream);
-  margin-bottom: 3px;
-}
-
-.av-note {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-.copyright-note {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  font-size: 11px;
-  color: var(--text-muted);
-  line-height: 1.8;
-}
-
-/* =============================================
-   FOOTER
-   ============================================= */
-footer {
-  background: var(--deep);
-  border-top: 1px solid var(--border);
-  padding: 2rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer p {
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-}
-
-footer .footer-brand {
-  font-family: var(--serif);
-  font-size: 14px;
-  color: var(--gold);
-  font-style: italic;
-}
-
-/* =============================================
-   DECORATIVE MOTIF ELEMENT
-   ============================================= */
-.motif-line {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.motif-line::before,
-.motif-line::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-.motif-line span {
-  font-size: 18px;
-  color: var(--gold);
-  opacity: 0.4;
-  font-family: var(--serif);
-}
-
-/* =============================================
-   SCROLL FADE-IN (subtle)
-   ============================================= */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.hero-left > * {
-  animation: fadeUp 0.7s ease forwards;
-  opacity: 0;
-}
-
-.hero-left > *:nth-child(1) { animation-delay: 0.1s; }
-.hero-left > *:nth-child(2) { animation-delay: 0.2s; }
-.hero-left > *:nth-child(3) { animation-delay: 0.35s; }
-.hero-left > *:nth-child(4) { animation-delay: 0.5s; }
-.hero-left > *:nth-child(5) { animation-delay: 0.65s; }
-
-
-
-
-/* =============================================
-   BATCH 1 — ANTHOLOGY HERO / DNA IMAGE
-   ============================================= */
-#home.dna-hero {
-  min-height: calc(100vh - 60px);
-  display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  padding-top: 60px;
-  overflow: hidden;
-  background: var(--night);
-}
-
-.dna-visual {
-  position: relative;
-  min-height: calc(100vh - 60px);
-  border-right: 1px solid var(--border);
-  overflow: hidden;
-  background: var(--night);
-}
-
-.dna-visual img {
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - 60px);
-  object-fit: cover;
-  object-position: left center;
-  display: block;
-}
-
-.dna-copy {
-  padding: 7rem 4rem 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background:
-    radial-gradient(ellipse 60% 70% at 20% 20%, rgba(139,46,46,0.05) 0%, transparent 70%),
-    var(--deep);
-}
-
-.dna-copy .hero-title {
-  font-size: clamp(50px, 5.7vw, 82px);
-}
-
-.dna-copy .hero-tagline,
-.dna-copy .hero-desc {
-  max-width: 460px;
-}
-
-.hero-spec-panel {
-  margin-top: 3rem;
-  max-width: 560px;
-}
-
-.hero-spec-panel .comparables {
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-}
-
-.closing-horse {
-  padding: 5rem 4rem;
-  border-top: 1px solid var(--border);
-  background: var(--night);
-  text-align: center;
-}
-
-.closing-horse img {
-  width: 70%;
-  max-width: 1100px;
-  height: auto;
-  max-height: 560px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  margin: 0 auto;
-  opacity: 0.92;
-  border: 1px solid var(--border);
-}
-
-
-/* =============================================
-   RESPONSIVE  —  tablet & mobile   (added for mobile-friendliness)
-   ============================================= */
-@media (max-width: 820px) {
-  /* collapse every multi-column grid (class-based) to a single column */
-  #home, .spec-grid, .anthology-header, .seasons-grid, .about-layout,
-  .contact-layout, .style-pillars, .contact-main, .statement-band {
-    grid-template-columns: 1fr !important;
-  }
-  /* collapse ANY inline grid too (catches repeat(3,1fr), 280px 1fr, etc.) */
-  [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
-
-  /* drop dividing borders that become stray vertical lines once stacked */
-  .hero-left, .contact-left, .contact-right, .statement-pull,
-  .season-card, .season-card:nth-child(even) { border-right: none !important; }
-
-  /* tame oversized desktop padding so content fits a phone screen */
-  nav { padding: 0 1.5rem !important; }
-  .nav-brand span { display: none; }
-  .nav-links { gap: 1.5rem; }
-  .hero-left { padding: 7rem 1.5rem 3rem !important; }
-  .section-head { padding: 3.5rem 1.5rem 2.25rem !important; gap: 1rem; }
-  .page-hero-inner { padding: 5rem 1.5rem 2.5rem !important; }
-  .anthology-header, .statement-band { padding: 2.5rem 1.5rem !important; gap: 2rem !important; }
-  .season-card { padding: 2.5rem 1.5rem !important; }
-  .spec-cell { padding: 2rem 1.5rem !important; gap: 1.25rem !important; }
-  .contact-left, .contact-right { padding: 3rem 1.5rem !important; }
-
-  /* tame oversized inline horizontal padding on the big blocks */
-  [style*="padding: 4rem"], [style*="padding: 5rem"], [style*="padding: 3rem 4rem"] {
-    padding-left: 1.5rem !important; padding-right: 1.5rem !important;
-  }
-
-  /* footer stacks neatly */
-  footer { flex-direction: column; gap: 0.6rem; text-align: center; padding: 1.75rem 1.5rem !important; }
-}
-
-@media (max-width: 560px) {
-  /* nav: hide brand, spread the links evenly across the bar */
-  .nav-brand { display: none; }
-  nav { padding: 0 1rem !important; }
-  .nav-links { width: 100%; justify-content: space-between; gap: 0.4rem; }
-  .nav-links a { font-size: 8px; letter-spacing: 0.08em; }
-
-  /* the S1–S5 rows: stack number/title, wrap year + badge below */
-  .series-item { display: flex !important; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 0.75rem; }
-  .series-n { width: 24px; }
-  .series-title { flex: 1 1 100%; }
-}
-
-
-.section-head h2::after { content: ''; display: block; width: 40px; height: 2px; background: var(--danger-red); margin-top: 0.85rem; }
-
 .nav-links a.active { color: var(--danger-red); }
 
-
-@media (max-width: 820px) {
-  #home.dna-hero { grid-template-columns: 1fr !important; min-height: auto; }
-  .dna-visual { min-height: 58vh; border-right: none; border-bottom: 1px solid var(--border); }
-  .dna-visual img { min-height: 58vh; height: 58vh; object-position: left center; }
-  .dna-copy { padding: 3.5rem 1.5rem 3rem !important; }
-  .hero-spec-panel { margin-top: 2.25rem; }
-  .closing-horse { padding: 3rem 1.5rem; }
-  .closing-horse img { width: 100%; max-height: none; }
-}
-
-@media (max-width: 560px) {
-  .dna-copy .hero-title { font-size: clamp(46px, 18vw, 62px); }
-  .dna-visual, .dna-visual img { min-height: 48vh; height: 48vh; }
-}
-
-
-
 /* =============================================
-   ABOUT PAGE — CREATOR PROFILE
+   ABOUT HERO
    ============================================= */
 .about-hero {
-  min-height: 600px;
+  min-height: 650px;
   padding-top: 60px;
   display: grid;
   grid-template-columns: 0.74fr 1.26fr;
@@ -1031,8 +133,8 @@ footer .footer-brand {
 
 .about-hero-image {
   position: relative;
-  min-height: 600px;
-  height: 600px;
+  min-height: 650px;
+  height: 650px;
   overflow: hidden;
   border-right: 1px solid var(--border);
 }
@@ -1047,8 +149,8 @@ footer .footer-brand {
 
 .about-hero-image img {
   width: 100%;
-  height: 600px;
-  min-height: 600px;
+  height: 650px;
+  min-height: 650px;
   object-fit: cover;
   object-position: center center;
   display: block;
@@ -1097,6 +199,9 @@ footer .footer-brand {
   margin-bottom: 2.5rem;
 }
 
+/* =============================================
+   MAIN COPY BLOCK
+   ============================================= */
 .about-copy-block {
   padding: 5rem 4rem;
   display: grid;
@@ -1141,6 +246,109 @@ footer .footer-brand {
 
 .about-main-copy em { color: var(--gold-light); }
 
+.about-main-copy h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--cream);
+  margin: 2rem 0 1rem;
+  font-weight: 300;
+}
+
+/* =============================================
+   VISUAL SECTIONS — THE WORLDS SHE WRITES
+   ============================================= */
+.visual-section {
+  padding: 5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  background: var(--night);
+}
+
+.visual-section:nth-child(even) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.visual-section:nth-child(even) .visual-image {
+  order: 2;
+}
+
+.visual-section:nth-child(even) .visual-copy {
+  order: 1;
+}
+
+.visual-section-label {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.visual-section h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.visual-copy p {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--text-mid);
+  margin-bottom: 1.2rem;
+}
+
+.visual-copy p:last-child { margin-bottom: 0; }
+
+.visual-copy em { color: var(--gold-light); }
+
+.visual-image {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.visual-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,169,110,0.05) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.visual-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Wedding dress image: smaller without cropping */
+.visual-section:first-of-type .visual-image {
+  background: linear-gradient(135deg, rgba(10,7,5,0.3) 0%, rgba(10,7,5,0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.visual-section:first-of-type .visual-image img {
+  object-fit: contain;
+  max-width: 85%;
+  max-height: 85%;
+  height: auto;
+}
+
+/* =============================================
+   CTA BAND
+   ============================================= */
 .about-cta-band {
   padding: 3rem 4rem;
   display: flex;
@@ -1159,35 +367,55 @@ footer .footer-brand {
   line-height: 1.4;
 }
 
-@media (max-width: 820px) {
-  .about-hero { grid-template-columns: 1fr !important; min-height: auto; }
-  .about-hero-image { min-height: 40vh; height: 40vh; border-right: none; border-bottom: 1px solid var(--border); }
-  .about-hero-image img { min-height: 40vh; height: 40vh; }
-  .about-hero-copy { padding: 3.5rem 1.5rem 3rem !important; }
-  .about-copy-block { grid-template-columns: 1fr !important; padding: 3rem 1.5rem !important; gap: 2rem; }
-  .about-cta-band { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.5rem !important; }
+.btn-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 560px) {
-  .about-hero-image, .about-hero-image img { min-height: 34vh; height: 34vh; }
-  .about-title { font-size: clamp(48px, 18vw, 66px); }
+.btn-gold {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--night);
+  background: var(--gold);
+  padding: 13px 32px;
+  transition: background 0.25s;
+  font-family: var(--sans);
 }
 
+.btn-gold:hover { background: var(--danger-red); color: var(--cream); }
 
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  padding: 2.5rem 4rem;
+  text-align: center;
+  background: var(--night);
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
 
-/* Link/image safety patch */
-body { overflow-x: hidden; }
-#request-materials { scroll-margin-top: 80px; }
-
-
-.comp-title {
+.footer-brand {
   font-family: var(--serif);
-  font-size: 1.28em;
-  color: var(--cream);
-  white-space: nowrap;
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 400;
+  letter-spacing: 0.06em;
 }
 
-
+/* =============================================
+   ABOUT QUOTES
+   ============================================= */
 .about-henry-quote {
   margin-top: 1.25rem;
   padding-left: 1.35rem;
@@ -1211,15 +439,6 @@ body { overflow-x: hidden; }
   font-style: normal;
 }
 
-.about-moved-lede {
-  font-family: var(--serif);
-  font-size: 24px;
-  line-height: 1.45;
-  color: var(--cream);
-  margin-bottom: 1.4rem;
-}
-
-
 .about-music-note {
   margin: 1.25rem 0;
   padding-left: 1.35rem;
@@ -1242,6 +461,42 @@ body { overflow-x: hidden; }
   color: var(--cream);
 }
 
+.comp-title {
+  font-family: var(--serif);
+  font-size: 1.05em;
+  color: var(--cream);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 820px) {
+  nav { padding: 0 1.5rem; }
+  
+  .about-hero { grid-template-columns: 1fr !important; min-height: auto; }
+  .about-hero-image { min-height: 40vh; height: 40vh; border-right: none; border-bottom: 1px solid var(--border); }
+  .about-hero-image img { min-height: 40vh; height: 40vh; }
+  .about-hero-copy { padding: 3.5rem 1.5rem 3rem !important; }
+  
+  .about-copy-block { grid-template-columns: 1fr !important; padding: 3rem 1.5rem !important; gap: 2rem; }
+  
+  .visual-section { grid-template-columns: 1fr !important; padding: 3rem 1.5rem !important; gap: 2rem; }
+  .visual-section:nth-child(even) .visual-image { order: 1 !important; }
+  .visual-section:nth-child(even) .visual-copy { order: 2 !important; }
+  
+  .about-cta-band { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.5rem !important; }
+  
+  footer { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 560px) {
+  .about-hero-image, .about-hero-image img { min-height: 34vh; height: 34vh; }
+  .about-title { font-size: clamp(48px, 18vw, 66px); }
+  nav { padding: 0 1rem; }
+}
+
+body { overflow-x: hidden; }
+
 </style>
 <link rel="icon" href="./favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="./assets/favicon_ml.png">
@@ -1261,23 +516,23 @@ body { overflow-x: hidden; }
     <li><a href="./contact.html">Contact</a></li>
   </ul>
 </nav>
+
 <!-- ABOUT HERO -->
 <section class="about-hero">
-  <div class="about-hero-image" aria-label="Abigail Fisher's untamed spirit">
-    <img src="./assets/anthology-horse.png" alt="A horse running through golden water at dusk">
+  <div class="about-hero-image" aria-label="Johanna Marica Leiner, creator">
+    <img src="./assets/2023_Profile.jpg" alt="Johanna Marica Leiner">
   </div>
   <div class="about-hero-copy">
     <p class="eyebrow">About the Creator</p>
     <h1 class="about-title">Johanna<br><em>Marica</em><br>Leiner</h1>
-    <p class="about-lede">Created from lived knowledge of corporate, creative, and institutional systems, the anthology turns experience into fiction.</p>
-    <blockquote class="about-henry-quote"><span>Henry Fisher — Abi’s father</span>There she goes, saddling the wild horse again.</blockquote>
+    <p class="about-lede">The anthology is built from lived knowledge inside systems designed to conceal harm. That knowledge becomes drama.</p>
   </div>
 </section>
 
 <!-- CREATOR POSITIONING -->
 <section class="about-copy-block">
   <aside class="side-note">
-    <p>Writer &amp; Creator<br>Psychological Suspense<br>Elevated Drama<br>Anthology Structure</p>
+    <p>Writer &amp; Creator<br>Psychological Suspense<br>Elevated Drama<br>Anthology Structure<br><br>20+ years in corporate systems<br>Finance, Technology, Creative Industries</p>
   </aside>
 
   <div class="about-main-copy">
@@ -1286,18 +541,68 @@ body { overflow-x: hidden; }
       <p><em>Wild and Free</em> is an original theme written and developed by Johanna Marica Leiner for <em>The Deception Anthology</em>. Each season carries its own vocal version, sharing the same emotional DNA.</p>
     </div>
 
+    <p style="font-size: 17px; font-style: italic; color: var(--cream); margin-bottom: 1.5rem;">Five stand-alone psychological suspense stories about deception, power, survival, and one woman's refusal to stop reading what others hope will remain hidden.</p>
 
-    <p class="about-moved-lede">Five stand-alone psychological suspense stories about deception, power, survival, and one woman’s refusal to stop reading what others hope will remain hidden.</p>
+    <h3>The Authority Behind the Work</h3>
 
-    <p>Created and written by Johanna Marica Leiner, <em>The Deception Anthology</em> is shaped by lived knowledge of corporate, creative, and institutional systems.</p>
+    <p>Johanna Marica Leiner brings twenty years of professional experience inside the systems her work examines. She has worked in corporate finance, technology and advertising, creative industries, and hospitality management—across multiple continents and institutional contexts. This is not observation from the outside. It is testimony from someone who has operated inside these systems, understood their architecture, and watched how they conceal harm through procedure, policy, and the careful deployment of charm.</p>
 
-    <p>The work is fiction. Its characters and institutions are invented. But its understanding of how systems conceal harm — through procedure, charm, status, silence, and control — comes from experience.</p>
+    <p>That accumulated knowledge informs every institutional detail in <em>The Deception Anthology</em>: the way meetings are run, the way information is controlled, the way ambition distorts loyalty, the way systems protect themselves. The characters in this anthology behave like real people inside real institutions because they are built on patterns Leiner has recognized across decades of professional life.</p>
 
     <p class="statement-line">Its worlds are fictional. Its understanding of how systems conceal harm is not.</p>
+  </div>
+</section>
 
-    <p>Across five stand-alone psychological suspense stories, that knowledge becomes drama: deception, power, survival, and one woman’s refusal to stop reading what others hope will remain hidden.</p>
+<!-- VISUAL SECTION 1: FASHION / SEASON 1 -->
+<section class="visual-section">
+  <div class="visual-image">
+    <img src="./assets/celeste_holloway.jpg" alt="Bridal design - exquisite detail in craftsmanship">
+  </div>
+  <div class="visual-copy">
+    <p class="visual-section-label">Season One</p>
+    <h3>Savile &amp; Sage:<br>Fashion as Institution</h3>
+    <p>The boutique at the heart of Season One is built from lived knowledge of design, craft, and the people who commission beauty. Leiner's background in bridal and fashion design informs every detail: the boutique's reputation, its clientele, the way aesthetic excellence becomes a structure for belonging—and a hiding place for something darker.</p>
+    <p>When Abi builds the boutique from nothing, she is not inventing the world—she is writing from memory of what it means to make something beautiful, to have people trust you with their most significant moments, and to discover that beauty can be weaponized.</p>
+  </div>
+</section>
 
-    <p>The anthology is not a documentary. It is a psychological suspense drama, comparable in tone and audience territory to <em class="comp-title">Succession</em>, <em class="comp-title">Broadchurch</em>, <em class="comp-title">The Undoing</em>, <em class="comp-title">Anatomy of a Scandal</em>, and <em class="comp-title">Sharp Objects</em>.</p>
+<!-- VISUAL SECTION 2: HOSPITALITY / COOLUM GEOGRAPHY -->
+<section class="visual-section">
+  <div class="visual-copy">
+    <p class="visual-section-label">Seasons Two Through Five</p>
+    <h3>Coolum:<br>The Geography of Safety</h3>
+    <p>Coolum Beach, Sunshine Coast, appears as the emotional anchor across the entire anthology. From Season Two onward, it is where Manon Davis lives, where Henry and Grace Fisher settle, where the family gathers, where Olivia marries on the beach at sunset.</p>
+    <p>This geography is built from intimate knowledge of running a guesthouse, managing events, orchestrating the details that make a space feel like home. The Coolum holiday house—where Mia and Damien will later retreat after his world collapses—is not invented. It is drawn from understanding what hospitality actually requires: attention to detail, emotional labor, the creation of safety for people you may never fully know.</p>
+  </div>
+  <div class="visual-image">
+    <img src="./assets/ezra_benedict_thomas.png" alt="Garden Route Sandcastle guesthouse - where the family gathers">
+  </div>
+</section>
+
+<!-- VISUAL SECTION 3: EVENTS / DETAIL & ORCHESTRATION -->
+<section class="visual-section">
+  <div class="visual-image">
+    <img src="./assets/event_management.JPG" alt="Event management - orchestrating complex moments">
+  </div>
+  <div class="visual-copy">
+    <p class="visual-section-label">Craft &amp; Precision</p>
+    <h3>Events &amp; the<br>Architecture of Moments</h3>
+    <p>Event management requires what the anthology requires: understanding how systems work, how people behave under pressure, how the smallest detail can unravel everything, and how to orchestrate complexity so it appears effortless.</p>
+    <p>The closing image of Season Two—Olivia's wedding at Coolum, the family gathered in golden light, every element aligned—is written from knowledge of what it takes to create that moment, to hold it together, and to understand that beneath the beauty, the precision, the orchestration, there is always the awareness that systems can fail.</p>
+  </div>
+</section>
+
+<!-- CLOSING VISUAL: THE WILD HORSE -->
+<section class="visual-section" style="background: var(--deep); padding: 6rem 4rem;">
+  <div class="visual-image">
+    <img src="./assets/anthology-horse.png" alt="A horse running through golden water at dusk">
+  </div>
+  <div class="visual-copy" style="display: flex; flex-direction: column; justify-content: center;">
+    <blockquote class="about-henry-quote" style="margin: 0; padding: 0; border: none; padding-left: 0;">
+      <span>Henry Fisher — Abi's father</span>
+      There she goes, saddling the wild horse again.
+    </blockquote>
+    <p style="margin-top: 2rem; font-size: 13px; line-height: 1.8; color: var(--text-muted);">The wild horse. The untamed instinct. The refusal to stop moving, to stop looking, to stop reading what others hope will remain hidden. This is Abigail Fisher across five seasons and five worlds. This is the woman at the heart of <em>The Deception Anthology</em>.</p>
   </div>
 </section>
 
