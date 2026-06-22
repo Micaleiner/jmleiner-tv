@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Johanna Marica Leiner — The Deception Anthology</title>
+<title>DEV — Johanna Marica Leiner — The Deception Anthology</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
@@ -293,7 +293,7 @@ nav {
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
-  margin-bottom: 2rem;
+  margin-bottom: 1.45rem;
 }
 
 .spec-cell {
@@ -458,8 +458,8 @@ nav {
   font-family: var(--sans);
   font-size: 11px;
   font-style: normal;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-transform: none;
   color: var(--danger-red);
 }
 
@@ -904,12 +904,12 @@ footer .footer-brand {
 
 
 /* =============================================
-   BATCH 4 — THREE-COLUMN ANTHOLOGY HERO
+   BATCH 4 — TWO-COLUMN ANTHOLOGY HERO
    ============================================= */
 #home.dna-hero {
-  min-height: calc(100vh + 60px);
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 0.78fr 0.86fr 0.42fr;
+  grid-template-columns: minmax(0, 1.65fr) minmax(420px, 0.9fr);
   padding-top: 60px;
   overflow: hidden;
   background: var(--night);
@@ -917,24 +917,27 @@ footer .footer-brand {
 
 .dna-visual {
   position: relative;
-  min-height: 100vh;
-  height: 100vh;
+  min-height: calc(100vh - 60px);
+  height: calc(100vh - 60px);
   border-right: 1px solid var(--border);
   overflow: hidden;
-  background: var(--night);
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%, rgba(201,169,110,0.04) 0%, transparent 72%),
+    var(--night);
 }
 
 .dna-visual img {
   width: 100%;
-  height: 100vh;
-  min-height: 100vh;
-  object-fit: cover;
+  height: 100%;
+  min-height: calc(100vh - 60px);
+  object-fit: contain;
   object-position: center center;
   display: block;
 }
 
 .dna-copy {
-  padding: 3.7rem 3.5rem 3rem;
+  min-height: calc(100vh - 60px);
+  padding: 3.4rem 3.5rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -944,7 +947,7 @@ footer .footer-brand {
 }
 
 .dna-copy .hero-title {
-  font-size: clamp(42px, 4.65vw, 68px);
+  font-size: clamp(42px, 4.9vw, 72px);
 }
 
 .dna-copy .hero-tagline,
@@ -1231,6 +1234,252 @@ footer .footer-brand {
 }
 
 
+
+
+/* =============================================
+   FULL-PAGE SEASON FEATURES — Deception development page
+   ============================================= */
+.season-feature {
+  min-height: calc(100vh - 60px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  background: var(--night);
+  border-bottom: 1px solid var(--border);
+}
+
+.season-feature-copy {
+  padding: clamp(2.4rem, 4vw, 4.4rem) 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse 70% 70% at 18% 18%, rgba(139,46,46,0.07) 0%, transparent 72%),
+    radial-gradient(ellipse 80% 70% at 88% 82%, rgba(201,169,110,0.04) 0%, transparent 74%),
+    var(--deep);
+}
+
+.season-feature:nth-of-type(even) .season-feature-copy {
+  background:
+    radial-gradient(ellipse 70% 70% at 82% 20%, rgba(201,169,110,0.04) 0%, transparent 72%),
+    radial-gradient(ellipse 70% 70% at 12% 85%, rgba(139,46,46,0.06) 0%, transparent 74%),
+    var(--surface);
+}
+
+.season-feature-image {
+  position: relative;
+  padding: clamp(2rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.35rem;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 50%, rgba(201,169,110,0.055) 0%, transparent 72%),
+    var(--night);
+  overflow: hidden;
+  border-left: 1px solid var(--border);
+}
+
+.season-feature.image-left .season-feature-image {
+  border-left: none;
+  border-right: 1px solid var(--border);
+}
+
+.season-feature-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(10,7,5,0.18) 0%, transparent 38%, rgba(10,7,5,0.22) 100%);
+  pointer-events: none;
+}
+
+.season-feature-image img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-height: calc(100vh - 250px);
+  height: auto;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  box-shadow: 0 32px 90px rgba(0,0,0,0.58);
+  display: block;
+}
+
+.season-feature-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.season-feature-kicker .eyebrow {
+  color: var(--gold);
+}
+
+.season-feature h2 {
+  font-size: clamp(40px, 4.8vw, 64px);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.012em;
+}
+
+.season-feature h2 em {
+  color: var(--danger-red);
+  font-style: italic;
+}
+
+.season-feature-meta {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.season-feature-copy > p:not(.eyebrow):not(.season-feature-closing) {
+  max-width: 650px;
+  font-size: 13.8px;
+  color: var(--text-mid);
+  line-height: 1.78;
+  margin-bottom: 0.85rem;
+}
+
+.season-feature-closing {
+  max-width: 620px;
+  margin: 0.95rem 0 0;
+  padding-left: 1.35rem;
+  border-left: 2px solid var(--danger-red);
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.2vw, 27px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.42;
+  color: var(--cream);
+}
+
+.season-feature-stats {
+  width: min(100%, 440px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.season-feature-image .season-feature-stats {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 440px);
+  margin-bottom: 0.15rem;
+}
+
+.feature-stat {
+  background: rgba(30,22,16,0.78);
+  padding: 1rem 1.15rem;
+}
+
+.feature-stat-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.feature-stat-value {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--cream-mid);
+  line-height: 1.35;
+}
+
+.season-feature-image .feature-stat-label,
+.season-feature-image .feature-stat-value {
+  color: var(--gold);
+}
+
+.season-index-lite {
+  border-bottom: 1px solid var(--border);
+}
+
+.season-index-lite .structure-layout {
+  grid-template-columns: minmax(320px, 0.78fr) minmax(560px, 1.62fr);
+}
+
+.season-index-lite .structure-intro {
+  padding-top: 3.4rem;
+  padding-bottom: 3.4rem;
+}
+
+.season-index-lite .seasons-panel {
+  padding-top: 3.4rem;
+  padding-bottom: 3.4rem;
+}
+
+@media (max-width: 960px) {
+  .season-feature {
+    min-height: auto;
+    grid-template-columns: 1fr !important;
+  }
+
+  .season-feature-copy {
+    order: 2;
+    padding: 3rem 1.5rem 3.5rem !important;
+  }
+
+  .season-feature-image,
+  .season-feature.image-left .season-feature-image {
+    order: 1;
+    min-height: auto;
+    padding: 1.5rem;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .season-feature-image img {
+    width: 100%;
+    max-height: none;
+  }
+
+  .season-feature h2 {
+    font-size: clamp(42px, 13vw, 60px);
+  }
+
+  .season-feature-stats {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .season-feature-image {
+    padding: 1rem;
+  }
+
+  .season-feature-copy {
+    padding: 2.5rem 1.25rem 3rem !important;
+  }
+
+  .season-feature-meta {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .season-feature-copy > p:not(.eyebrow):not(.season-feature-closing) {
+    font-size: 13.5px;
+    line-height: 1.8;
+  }
+
+  .season-feature-stats {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* =============================================
    RESPONSIVE  —  tablet & mobile   (added for mobile-friendliness)
    ============================================= */
@@ -1325,9 +1574,9 @@ body { overflow-x: hidden; }
 
 <!-- NAV -->
 <nav>
-  <a class="nav-brand" href="./anthology.html">Johanna Marica Leiner <span>/ The Deception Anthology</span></a>
+  <a class="nav-brand" href="./anthology-dev.html">Johanna Marica Leiner <span>/ The Deception Anthology</span></a>
   <ul class="nav-links">
-    <li><a href="./anthology.html" class="active">Anthology</a></li>
+    <li><a href="./anthology-dev.html" class="active">Anthology</a></li>
     <li><a href="./season1.html">Season One</a></li>
     <li><a href="./season2.html">Season Two</a></li>
     <li><a href="./about.html">About</a></li>
@@ -1337,15 +1586,16 @@ body { overflow-x: hidden; }
 <!-- HERO -->
 <section id="home" class="dna-hero">
   <div class="dna-visual" aria-label="The hidden code of The Deception Anthology">
-    <img src="./assets/anthology-dna-hero.png" alt="Symbolic golden DNA helix made from fabric, ledgers, chess, permits, maps and documents">
+    <img src="./assets/anthology-dna-hero.png" alt="Golden DNA helix with candle, smoke, moths and hidden handwriting">
   </div>
 
   <div class="dna-copy">
     <p class="eyebrow">Five-Season Psychological Suspense Anthology</p>
     <h1 class="hero-title">The<br><em>Deception</em><br>Anthology</h1>
-    <blockquote class="hero-tagline">Truth is always dressed in disguise. Survival requires reading the costume before confronting what wears it.</blockquote>
+    <blockquote class="hero-tagline">Sharing one emotional DNA: truth is always dressed in disguise.</blockquote>
     <div class="btn-row">
       <a href="./contact.html#request-materials" class="btn-gold">Request Materials</a>
+      <a href="#season-one" class="btn-outline">Overview of all seasons below ↓</a>
     </div>
 
     <div class="music-strip" aria-label="Wild and Free music player">
@@ -1359,24 +1609,124 @@ body { overflow-x: hidden; }
     </div>
   </div>
 
-  <aside class="hero-spec-panel" aria-label="Anthology specifications">
-    <div class="spec-grid">
-      <div class="spec-cell"><p class="spec-label">Format</p><p class="spec-value">Anthology Drama</p></div>
-      <div class="spec-cell"><p class="spec-label">Seasons</p><p class="spec-value">Five</p></div>
-      <div class="spec-cell"><p class="spec-label">Genre</p><p class="spec-value">Psychological Suspense</p></div>
-      <div class="spec-cell"><p class="spec-label">Episodes</p><p class="spec-value">9 × 50 min</p></div>
-    </div>
-  </aside>
 </section>
 
-<!-- ANTHOLOGY STRUCTURE -->
-<section id="seasons" class="structure-section">
+
+<!-- FEATURED SEASONS — DEVELOPMENT TEST -->
+<section id="season-one" class="season-feature">
+  <div class="season-feature-copy">
+    <div class="season-feature-kicker">
+      <span class="eyebrow">Season One</span>
+      <span class="series-badge badge-complete">Scripts Complete</span>
+    </div>
+    <h2>Beware of<br><em>What You Want</em></h2>
+    <span class="season-feature-meta">Fashion &nbsp;·&nbsp; Criminal exploitation &nbsp;·&nbsp; 1981–1990</span>
+    <p>Abigail Fisher arrives in London with nothing but her talent and a single, dangerous belief: that excellence and integrity are sufficient protection. She builds Savile &amp; Sage into something genuinely extraordinary — a boutique on Savile Row that becomes known not just for its design but for the precision of its craft, the loyalty of its team, the intelligence of its vision. The Velvet Requiem becomes her masterpiece: a design so elegant, so perfectly rendered, that it walks into the world carrying her signature in every stitch.</p>
+    <p>But excellence makes you visible. And visibility has a price. Unknown to Abi, a diamond smuggling and money laundering operation has been constructed inside her boutique. Not despite her talent — because of it. Her work is the vehicle. Her business is the cover. Her team is the infrastructure. Five moths circle the flame Abi Fisher built. Each takes something. Her talent. Her labour. Her name. Her love. Her business.</p>
+    <p class="season-feature-closing">Beware of what you want. Because that is exactly what you get.</p>
+  </div>
+  <div class="season-feature-image">
+    <div class="season-feature-stats">
+      <div class="feature-stat"><p class="feature-stat-label">Episodes</p><p class="feature-stat-value">9 × 50 min</p></div>
+      <div class="feature-stat"><p class="feature-stat-label">Status</p><p class="feature-stat-value">Scripts Complete</p></div>
+    </div>
+    <img src="./assets/s1-beware-hero.png" alt="Savile and Sage boutique with documents, emerald velvet, diamonds and hidden criminal infrastructure">
+  </div>
+</section>
+
+<section id="season-two" class="season-feature image-left">
+  <div class="season-feature-image">
+    <div class="season-feature-stats">
+      <div class="feature-stat"><p class="feature-stat-label">Episodes</p><p class="feature-stat-value">9 × 50 min</p></div>
+      <div class="feature-stat"><p class="feature-stat-label">Status</p><p class="feature-stat-value">Scripts Complete</p></div>
+    </div>
+    <img src="./assets/s2-zugzwang-hero.png" alt="New York boardroom at sunset with chess pieces, corporate maps and confidential transfer documents">
+  </div>
+  <div class="season-feature-copy">
+    <div class="season-feature-kicker">
+      <span class="eyebrow">Season Two</span>
+      <span class="series-badge badge-complete">Scripts Complete</span>
+    </div>
+    <h2><em>Zug</em>-<br>zwang</h2>
+    <span class="season-feature-meta">Advertising &nbsp;·&nbsp; Corporate architecture &nbsp;·&nbsp; 1991–1999</span>
+    <p>Abigail arrives in New York in 1991 with her children and a qualification in accounting. She has survived London. She has rebuilt herself. She is ready to be invisible again, to work quietly, to build something that cannot be taken from her. Instead, she walks into the most elegant trap of all: a corporate architecture where the system itself is the weapon.</p>
+    <p>Zugzwang is a chess term. It means a position where any move you make worsens your position. The rules require that you move. But movement itself is the mechanism of your destruction. Abi enters advertising at executive level — a world where value moves invisibly inside the group to where it is most needed. She is intelligent. She sees clearly. And what she sees is that the system is designed to make every legitimate move look like complicity. By the end, she has lost her position, her credibility, and her belief that intelligence and honesty are sufficient.</p>
+    <p class="season-feature-closing">Zugzwang. Any move worsens your position. The rules require that you move.</p>
+  </div>
+</section>
+
+
+<section id="season-three" class="season-feature">
+  <div class="season-feature-copy">
+    <div class="season-feature-kicker">
+      <span class="eyebrow">Season Three</span>
+      <span class="series-badge badge-reg">Framework Established</span>
+    </div>
+    <h2>Blind<br><em>Clarity</em></h2>
+    <span class="season-feature-meta">Logistics &nbsp;·&nbsp; Insider trading / unfair dismissal &nbsp;·&nbsp; 2001–2004</span>
+    <p>Abigail has survived two cities, two systems, two forms of institutional betrayal. She arrives at a logistics company at executive management level with the hard-won knowledge of how systems work and how they break. She is invited to contribute strategic vision. She is given access to the financial architecture. And within weeks, she discovers that the entire operation is built on a fraud so elegant, so perfectly invisible, that it takes her breath away.</p>
+    <p>The aged receivables are cycling. Bad debts move to cleared accounts, then reappear as current debt the following month. The pattern repeats. The cycle is endless. But that is only the visible layer. Above her, at the managing director level, insider trading moves in parallel. Shares are identified before public knowledge. And when someone must take the fall, Abi's brother-in-law is positioned perfectly. He is arrested. The real architects continue untouched. Abi tries to expose the fraud. She reaches for legal protection through a labour lawyer. Instead, she discovers that institutional corruption runs deeper than she imagined. Every system designed to catch the crime is itself compromised.</p>
+    <p class="season-feature-closing">Some institutions protect themselves, not their people.</p>
+  </div>
+  <div class="season-feature-image">
+    <div class="season-feature-stats">
+      <div class="feature-stat"><p class="feature-stat-label">Episodes</p><p class="feature-stat-value">9 × 50 min</p></div>
+      <div class="feature-stat"><p class="feature-stat-label">Status</p><p class="feature-stat-value">Framework Established</p></div>
+    </div>
+    <img src="./assets/s3-blind-clarity-hero.png" alt="A scapegoat in a corporate office confronted under a wall of fraud documents and institutional evidence">
+  </div>
+</section>
+
+<section id="season-four" class="season-feature image-left">
+  <div class="season-feature-image">
+    <div class="season-feature-stats">
+      <div class="feature-stat"><p class="feature-stat-label">Episodes</p><p class="feature-stat-value">9 × 50 min</p></div>
+      <div class="feature-stat"><p class="feature-stat-label">Status</p><p class="feature-stat-value">Framework Established</p></div>
+    </div>
+    <img src="./assets/s4-permit-trap-hero.png" alt="A coastal guesthouse blocked by permit denials, inspection notices and municipal obstruction">
+  </div>
+  <div class="season-feature-copy">
+    <div class="season-feature-kicker">
+      <span class="eyebrow">Season Four</span>
+      <span class="series-badge badge-reg">Framework Established</span>
+    </div>
+    <h2>The Permit<br><em>Trap</em></h2>
+    <span class="season-feature-meta">Local government &nbsp;·&nbsp; Bureaucratic obstruction &nbsp;·&nbsp; 2005–2009</span>
+    <p>Abigail moves to Coolum, a small Queensland town, to build a guesthouse. It is meant to be a refuge. A place where she can control the outcome. A business built on her own terms. She discovers that small towns operate under different rules. The guesthouse license is denied. No clear reason. No pathway forward. An appeal is filed. The appeal takes two years. During those two years, she cannot market the property as a bed and breakfast. She cannot operate. She builds small kitchens for self-catering — a workaround, an adaptation, a woman refusing to be stopped by procedure.</p>
+    <p>But the procedure continues. Weekly inspections arrive. Compliance notices multiply. Each one is technically correct. Each one is procedurally proper. Each one is a small weapon in the hands of people who have decided she should not succeed. Jealous neighbours. A town where everyone knows everyone's business. A municipal system where procedure is not designed to serve but to obstruct. Where bureaucratic power becomes personal vendetta disguised as regulation. Two years of waiting. Two years of appeals. Two years of being frozen in place by a system that is working exactly as intended.</p>
+    <p class="season-feature-closing">Some systems are smaller, more personal, harder to escape.</p>
+  </div>
+</section>
+
+<section id="season-five" class="season-feature">
+  <div class="season-feature-copy">
+    <div class="season-feature-kicker">
+      <span class="eyebrow">Season Five</span>
+      <span class="series-badge badge-reg">Framework Established</span>
+    </div>
+    <h2>Toxic<br><em>Inheritance</em></h2>
+    <span class="season-feature-meta">Inheritance &nbsp;·&nbsp; Poisoning / murder &nbsp;·&nbsp; 2010–2015</span>
+    <p>A farm property in Brisbane. A cattery operation. An inheritance offered in exchange for service — a simple transaction that becomes a curse. Abi and her family are advised to build a house on the property. They do. They move in. They begin to build a life. Then the poisoning begins. It arrives in the water from the borehole that feeds the house. Then in the washing powder. Then everywhere — sprayed across surfaces, contaminating the air, the soil, the infrastructure of home itself. The poison is glyphosate, the herbicide used to kill unwanted plants. It is being used to kill an unwanted family.</p>
+    <p>One person dies. Not in the household. Somewhere else. The poison has spread wider than the property. The family flees to save their lives. They abandon the property. It is sold. But the poisoned furniture remains — the physical evidence of what was done to them, wrapped and stored in a garage, protected as proof of a crime that no one will prosecute. The police are corrupt. The investigation goes nowhere. The people responsible walk free. The family sits with the evidence of their own poisoning, unable to use it, unable to move past it. An inheritance becomes a weapon. A gift becomes a trap.</p>
+    <p class="season-feature-closing">Survival means escape. But survival does not mean justice.</p>
+  </div>
+  <div class="season-feature-image">
+    <div class="season-feature-stats">
+      <div class="feature-stat"><p class="feature-stat-label">Episodes</p><p class="feature-stat-value">9 × 50 min</p></div>
+      <div class="feature-stat"><p class="feature-stat-label">Status</p><p class="feature-stat-value">Framework Established</p></div>
+    </div>
+    <img src="./assets/s5-toxic-inheritance-hero.png" alt="A poisoned farm and cattery with contaminated furniture, bore water warning and toxicology evidence">
+  </div>
+</section>
+
+<!-- ANTHOLOGY STRUCTURE — compact index retained below development sections -->
+<section id="season-index" class="structure-section season-index-lite">
   <div class="structure-layout">
     <div class="structure-intro">
       <p class="eyebrow">The Deception Anthology</p>
       <h2>Anthology Structure</h2>
       <p class="structure-lede">Five stand-alone stories. Five different systems. Five different mechanisms of harm.</p>
-      <p class="structure-dna">Sharing one emotional DNA: truth is always dressed in disguise.</p>
+      <p class="structure-dna">Truth is always dressed in disguise. Survival requires reading the costume before confronting what wears it.</p>
     </div>
 
     <div class="seasons-panel">
@@ -1391,41 +1741,9 @@ body { overflow-x: hidden; }
         <li class="series-item"><span class="series-n">S1</span><span class="series-title">Beware of What You Want<span class="series-engine">Fashion · Criminal exploitation</span></span><span class="series-year">1981–1990</span><span class="series-badge badge-complete">Scripts Complete</span></li>
         <li class="series-item"><span class="series-n">S2</span><span class="series-title">Zugzwang<span class="series-engine">Advertising · Corporate architecture</span></span><span class="series-year">1991–1999</span><span class="series-badge badge-complete">Scripts Complete</span></li>
         <li class="series-item"><span class="series-n">S3</span><span class="series-title">Blind Clarity<span class="series-engine">Logistics · Insider trading / unfair dismissal</span></span><span class="series-year">2001–2004</span><span class="series-badge badge-reg">Framework Established</span></li>
-        <li class="series-item"><span class="series-n">S4</span><span class="series-title">The Permit Trap<span class="series-engine">Local government · Personal vendetta</span></span><span class="series-year">2005–2009</span><span class="series-badge badge-reg">Framework Established</span></li>
-        <li class="series-item"><span class="series-n">S5</span><span class="series-title">Toxic Inheritance<span class="series-engine">Animal care · Murder / attempted murder</span></span><span class="series-year">2010–2015</span><span class="series-badge badge-reg">Framework Established</span></li>
+        <li class="series-item"><span class="series-n">S4</span><span class="series-title">The Permit Trap<span class="series-engine">Local government · Bureaucratic obstruction</span></span><span class="series-year">2005–2009</span><span class="series-badge badge-reg">Framework Established</span></li>
+        <li class="series-item"><span class="series-n">S5</span><span class="series-title">Toxic Inheritance<span class="series-engine">Inheritance · Poisoning / murder</span></span><span class="series-year">2010–2015</span><span class="series-badge badge-reg">Framework Established</span></li>
       </ul>
-    </div>
-  </div>
-
-  <!-- Season summary cards — brief, link out -->
-  <div class="seasons-grid">
-    <div class="season-card" style="display:flex; flex-direction:column;">
-      <div class="season-meta-top">
-        <span class="eyebrow" style="color:var(--text-muted);">Season One</span>
-        <span class="series-badge badge-complete">Scripts Complete</span>
-      </div>
-      <h3>Beware of What You Want</h3>
-      <span class="season-sub">Fashion &nbsp;·&nbsp; Criminal exploitation &nbsp;·&nbsp; 1981–1990</span>
-      <p>Fashion as the institutional frame. Abigail builds a boutique on Savile Row into something genuinely extraordinary. Unknown to her, a diamond smuggling and money laundering operation has been constructed inside it — layer by layer — by the people she trusts most.</p>
-      <p class="season-quote">Her talent was the cover. Her work was the vehicle.</p>
-      <div class="season-footer" style="margin-top:auto;">
-        <div><p class="sf-label">Episodes</p><p class="sf-value">9 × 50 min</p></div>
-        <div><p class="sf-label">Status</p><p class="sf-value">Scripts Complete</p></div>
-      </div>
-    </div>
-    <div class="season-card" style="display:flex; flex-direction:column;">
-      <div class="season-meta-top">
-        <span class="eyebrow" style="color:var(--text-muted);">Season Two</span>
-        <span class="series-badge badge-complete">Scripts Complete</span>
-      </div>
-      <h3>Zugzwang</h3>
-      <span class="season-sub">Advertising &nbsp;·&nbsp; Corporate architecture &nbsp;·&nbsp; 1991–1999</span>
-      <p>Advertising as the institutional frame. Abigail enters a corporate architecture where value is moved inside the group to where it is most needed. The danger is not theft in the obvious sense. It is a structure that makes every move look authorised.</p>
-      <p class="season-quote">Any move she makes worsens her position. The rules require that she move.</p>
-      <div class="season-footer" style="margin-top:auto;">
-        <div><p class="sf-label">Episodes</p><p class="sf-value">9 × 50 min</p></div>
-        <div><p class="sf-label">Status</p><p class="sf-value">Scripts Complete</p></div>
-      </div>
     </div>
   </div>
 </section>
