@@ -100,7 +100,9 @@ nav {
 .about-hero {
   min-height: 620px;
   padding-top: 60px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: center;
   border-bottom: 1px solid var(--border);
   background:
@@ -111,8 +113,15 @@ nav {
 
 .about-hero-copy {
   width: 100%;
-  max-width: 920px;
   padding: 4.4rem 4rem 4rem;
+}
+
+.about-hero-music {
+  padding: 3.6rem 4rem 3.6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .creator-mini-portrait {
@@ -163,7 +172,7 @@ nav {
 .about-copy-block {
   padding: 5rem 4rem;
   display: grid;
-  grid-template-columns: minmax(250px, 360px) minmax(0, 680px);
+  grid-template-columns: minmax(320px, 450px) minmax(0, 680px);
   gap: 5rem;
   border-bottom: 1px solid var(--border);
   background: var(--surface);
@@ -210,16 +219,29 @@ nav {
 }
 
 .about-music-note {
-  margin: 0 0 1.25rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 1.55rem auto 0;
   padding-left: 1.35rem;
   border-left: 2px solid var(--danger-red);
 }
-.about-music-note .music-note-label {
+.about-music-title {
+  color: var(--danger-red);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+}
+.about-music-note .music-note-label,
+.about-chorus-lyrics .music-note-label {
   font-size: 9px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 0.45rem;
+}
+.about-music-note p {
+  margin-bottom: 0.75rem;
 }
 .about-music-note p:last-child {
   font-family: var(--serif);
@@ -227,57 +249,118 @@ nav {
   font-style: italic;
   line-height: 1.45;
   color: var(--cream);
+  margin-bottom: 0;
+}
+.about-chorus-lyrics {
+  width: 100%;
+  max-width: 420px;
+  margin: 1.25rem auto 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.about-chorus-lyrics blockquote {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-style: italic;
+  line-height: 1.38;
+  color: var(--cream);
+  text-align: center;
 }
 
 .about-text-panels {
-  padding: 5rem 4rem;
+  min-height: calc(100vh - 60px);
+  padding: 3.1rem 4rem 3rem;
   border-bottom: 1px solid var(--border);
   background: var(--night);
+  display: flex;
+  flex-direction: column;
 }
-.about-text-panels-head { margin-bottom: 2rem; }
-.about-text-panels-head h2 {
-  font-size: clamp(34px, 4vw, 52px);
-  margin-top: 0.75rem;
+
+.about-text-panels-header {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(420px, 1.05fr);
+  gap: 4rem;
+  align-items: center;
+  padding: 0 0 1.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-text-panels-title-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text-panels-header h2 {
+  color: var(--gold);
+  font-size: clamp(26px, 2.4vw, 34px);
+  margin: 0;
+  text-align: left;
+  padding-left: 2rem;
+  border-left: 4px solid var(--danger-red);
+  line-height: 1.18;
+}
+
+.about-authority-copy h3 {
+  font-size: 17px;
+  color: var(--cream);
+  margin: 0 0 0.65rem;
+}
+
+.about-authority-copy p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-mid);
 }
 
 .about-panel-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  background: transparent;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
 .about-panel {
   background: var(--surface);
-  padding: 2.35rem 2rem;
-  min-height: 300px;
+  padding: 1.35rem 1.55rem;
+  min-height: 0;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .visual-section-label {
   font-size: 10px;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 400;
-  margin-bottom: 1rem;
+  line-height: 1.2;
+  margin-bottom: 0.45rem;
 }
 
 .about-panel h3 {
   font-family: var(--serif);
-  font-size: 26px;
+  font-size: 18px;
   color: var(--cream);
-  margin-bottom: 1.25rem;
-  line-height: 1.18;
+  margin: 0.1rem 0 0.5rem;
+  line-height: 1.15;
 }
 
 .about-panel p {
-  font-size: 14px;
-  line-height: 1.92;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--text-mid);
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 .about-panel p:last-child { margin-bottom: 0; }
+
+/* About knowledge panels: all season labels stay gold; all knowledge headings stay red. */
+.about-panel .visual-section-label { color: var(--gold); }
+.about-panel h3 { color: var(--danger-red); }
 
 .wild-horse-section {
   padding: 5rem 4rem;
@@ -421,6 +504,10 @@ footer {
   .about-copy-block { gap: 2rem; padding-top: 3rem; padding-bottom: 3rem; }
   .about-text-panels,
   .wild-horse-section { padding-top: 3rem; padding-bottom: 3rem; }
+  .about-text-panels { min-height: auto; }
+  .about-text-panels-header { grid-template-columns: 1fr; gap: 1.5rem; padding-bottom: 1.75rem; }
+  .about-text-panels-title-wrap { justify-content: flex-start; }
+  .about-panel-grid { grid-template-columns: 1fr !important; }
   .about-cta-band { flex-direction: column; align-items: flex-start; padding-top: 2.5rem; padding-bottom: 2.5rem; }
   footer { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; }
 }
@@ -460,65 +547,107 @@ footer {
 
 <section class="about-hero">
   <div class="about-hero-copy">
-    <div class="creator-mini-portrait" aria-label="Johanna Marica Leiner, creator">
-      <img src="./assets/johanna-marica-leiner-profile-as-is-small.jpg" alt="Johanna Marica Leiner">
-      <span class="creator-mini-caption">Johanna Marica Leiner</span>
-    </div>
     <p class="eyebrow">About the Creator</p>
     <h1 class="about-title">Johanna<br><em>Marica</em><br>Leiner</h1>
     <p class="about-lede">The anthology is built from lived knowledge inside systems designed to conceal harm. That knowledge becomes drama.</p>
+  </div>
+  
+  <div class="about-hero-music">
+    <div class="creator-mini-portrait" aria-label="Mica, creator">
+      <img src="./assets/johanna-marica-leiner-profile-as-is-small.jpg" alt="Mica">
+      <span class="creator-mini-caption">Known as Mica</span>
+    </div>
+    
+    <div class="about-music-note">
+      <h3 class="about-music-title">Wild and Free</h3>
+      <p class="music-note-label">Original Music</p>
+      <p>Written and developed by Mica for <em>The Deception Anthology</em>.</p>
+      <p>Each season carries its own vocal version, sharing the same emotional DNA.</p>
+    </div>
+
+    <div class="about-chorus-lyrics">
+      <p class="music-note-label">Chorus Lyrics</p>
+      <blockquote>
+        Wild and free, that&rsquo;s me<br>
+        Always will be<br>
+        Living in open space<br>
+        With the sun in my face
+      </blockquote>
+    </div>
   </div>
 </section>
 
 <section class="about-copy-block">
   <aside class="side-note">
-    <p>Writer &amp; Creator<br>Psychological Suspense<br>Elevated Drama<br>Anthology Structure<br><br>20+ years in corporate systems<br>Finance, Technology, Creative Industries</p>
+    <p><strong style="color: var(--gold);">MICA</strong><br>
+    <small>Writer &amp; Creator</small></p>
+    
+    <p style="margin-top: 1.5rem;"><strong style="color: var(--gold-light);">SPECIALIZATION</strong><br>
+    Psychological Suspense<br>
+    Elevated Drama<br>
+    Anthology Structure</p>
+    
+    <p style="margin-top: 1.5rem;"><strong style="color: var(--gold-light);">PROFESSIONAL FOUNDATION</strong><br>
+    Fine Arts &amp; Fashion Design<br>
+    Corporate Finance &amp; Business Systems<br>
+    Creative Industries &amp; Technology<br>
+    Hospitality &amp; Event Management</p>
+    
+    <p style="margin-top: 1.5rem;"><strong style="color: var(--gold-light);">RECOGNITION</strong><br>
+    <small>Gallery exhibitions, art society memberships, and international competition recognition in visual art</small></p>
   </aside>
 
   <div class="about-main-copy">
-    <div class="about-music-note">
-      <p class="music-note-label">Original Music</p>
-      <p><em>Wild and Free</em> is an original theme written and developed by Johanna Marica Leiner for <em>The Deception Anthology</em>. Each season carries its own vocal version, sharing the same emotional DNA.</p>
-    </div>
+    <h3>The Anthology</h3>
 
     <p style="font-size: 17px; font-style: italic; color: var(--cream); margin-bottom: 1.5rem;">Five stand-alone psychological suspense stories about deception, power, survival, and one woman's refusal to stop reading what others hope will remain hidden.</p>
 
-    <h3>The Authority Behind the Work</h3>
+    <p class="statement-line">The worlds are fictional. The understanding of how systems conceal harm is not.</p>
 
-    <p>Johanna Marica Leiner brings twenty years of professional experience inside the systems her work examines. She has worked in corporate finance, technology and advertising, creative industries, and hospitality management—across multiple continents and institutional contexts. This is not observation from the outside. It is testimony from someone who has operated inside these systems, understood their architecture, and watched how they conceal harm through procedure, policy, and the careful deployment of charm.</p>
+    <h3 style="color: var(--gold); margin-top: 2rem;">A Free Spirit Who Learned to Survive</h3>
 
-    <p>That accumulated knowledge informs every institutional detail in <em>The Deception Anthology</em>: the way meetings are run, the way information is controlled, the way ambition distorts loyalty, the way systems protect themselves. The characters in this anthology behave like real people inside real institutions because they are built on patterns Leiner has recognized across decades of professional life.</p>
+    <p>Mica is by nature a free spirit—untamed, instinctive, refusing compromise. But three decades inside institutional systems demanded something different. She learned to think in ten-year horizons. She learned strategy, control, calculated patience. She learned to read the systems from inside them without being consumed by them.</p>
 
-    <p class="statement-line">Its worlds are fictional. Its understanding of how systems conceal harm is not.</p>
+    <p><em style="color: var(--gold);">She lost touch with her freedom. She didn't lose touch with herself.</em></p>
+
+    <p>But the wild horse never stops saddling up. Periodically, throughout her life, she breaks the pattern. She refuses the safe choice. She tells the truth that costs her. She walks out with the evidence. This breaking free, this refusal to stay controlled—it's expressed through her art, her creative work, and ultimately through <em>The Deception Anthology itself.</em> The series is her saddling the wild horse again.</p>
   </div>
 </section>
 
 <section class="about-text-panels">
-  <div class="about-text-panels-head">
-    <p class="eyebrow">The Worlds Behind the Work</p>
-    <h2>Experience, translated into story.</h2>
+  <div class="about-text-panels-header">
+    <div class="about-text-panels-title-wrap">
+      <h2>How knowledge becomes story.</h2>
+    </div>
+    <div class="about-authority-copy">
+      <h3>The Authority Behind the Work</h3>
+      <p>Mica brings decades of professional experience across multiple continents—corporate finance, technology, advertising, creative industries, fashion design, event management, and hospitality. She understands institutional architecture from the inside: how systems conceal harm, how procedures protect themselves above all else.</p>
+    </div>
   </div>
 
   <div class="about-panel-grid">
-    <article class="about-panel">
+    <article class="about-panel is-season-one">
       <p class="visual-section-label">Season One</p>
-      <h3>Savile &amp; Sage:<br>Fashion as Institution</h3>
-      <p>The boutique at the heart of Season One is built from lived knowledge of design, craft, and the people who commission beauty. Leiner's background in bridal and fashion design informs every detail: the boutique's reputation, its clientele, the way aesthetic excellence becomes a structure for belonging—and a hiding place for something darker.</p>
-      <p>When Abi builds the boutique from nothing, she is not inventing the world—she is writing from memory of what it means to make something beautiful, to have people trust you with their most significant moments, and to discover that beauty can be weaponized.</p>
+      <h3>Fashion Design &amp;<br>Entrepreneurship</h3>
+      <p>The boutique at Savile &amp; Sage is built from lived knowledge of design, craft, luxury, and the people who commission beauty. Every detail reflects reality: reputation, clientele, and the way aesthetic excellence becomes a hiding place for something darker.</p>
     </article>
 
-    <article class="about-panel">
-      <p class="visual-section-label">Seasons Two Through Five</p>
-      <h3>Coolum:<br>The Geography of Safety</h3>
-      <p>Coolum Beach, Sunshine Coast, appears as the emotional anchor across the anthology. From Season Two onward, it is where Manon Davis lives, where Henry and Grace Fisher settle, where the family gathers, where Olivia marries on the beach at sunset.</p>
-      <p>This geography is built from intimate knowledge of hospitality: attention to detail, emotional labor, and the creation of safety for people you may never fully know.</p>
+    <article class="about-panel is-seasons-two-three">
+      <p class="visual-section-label">Seasons Two &amp; Three</p>
+      <h3>Finance &amp;<br>Legal Systems</h3>
+      <p>Corporate fraud revealed through the trained eye that spots variances. Insider trading exposed through an understanding of how legal systems protect themselves. Financial and legal literacy become tools for reading institutional architecture.</p>
     </article>
 
-    <article class="about-panel">
-      <p class="visual-section-label">Craft &amp; Precision</p>
-      <h3>Events &amp; the<br>Architecture of Moments</h3>
-      <p>Event management requires what the anthology requires: understanding how systems work, how people behave under pressure, how the smallest detail can unravel everything, and how to orchestrate complexity so it appears effortless.</p>
-      <p>The closing image of Season Two—Olivia's wedding at Coolum, the family gathered in golden light, every element aligned—is written from knowledge of what it takes to create that moment and hold it together.</p>
+    <article class="about-panel is-season-four">
+      <p class="visual-section-label">Season Four</p>
+      <h3>Hospitality &amp;<br>General Management</h3>
+      <p>After decades navigating corporate and legal systems, Mica takes the guesthouse—a concrete thing she can control. But in Coolum, she discovers local government corruption operates by different rules.</p>
+    </article>
+
+    <article class="about-panel is-season-five">
+      <p class="visual-section-label">Season Five</p>
+      <h3>Legal &amp;<br>Institutional Systems</h3>
+      <p>Her final confrontation with the systems she spent decades trying to survive. This time, she understands the architecture completely—but the system still chooses not to see.</p>
     </article>
   </div>
 </section>
@@ -529,10 +658,10 @@ footer {
   </div>
   <div class="wild-horse-copy">
     <blockquote class="about-henry-quote">
-      <span>Henry Fisher — Abi's father</span>
+      <span style="color: var(--gold);">Henry Fisher — Abi's father</span>
       There she goes, saddling the wild horse again.
     </blockquote>
-    <p>The wild horse. The untamed instinct. The refusal to stop moving, to stop looking, to stop reading what others hope will remain hidden. This is Abigail Fisher across five seasons and five worlds.</p>
+    <p>This is Abigail Fisher across five seasons. And this is Mica's vision of what happens when someone refuses to stay tamed by the systems that tried to cage her—even when she tries to build something safe, something concrete, something of her own.</p>
   </div>
 </section>
 

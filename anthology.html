@@ -495,6 +495,14 @@ nav {
   border: 1px solid var(--border);
 }
 
+.badge-genre {
+  background: rgba(201,169,110,0.2);
+  color: var(--gold);
+  border: 1px solid rgba(201,169,110,0.4);
+  font-size: 11px;
+  font-weight: 500;
+}
+
 /* Season Cards */
 .seasons-grid {
   display: grid;
@@ -1611,8 +1619,37 @@ body { overflow-x: hidden; }
 
 </section>
 
+<!-- ALL FIVE SEASONS AT A GLANCE -->
+<section id="season-index" class="structure-section season-index-lite">
+  <div class="structure-layout">
+    <div class="structure-intro">
+      <p class="eyebrow">The Deception Anthology</p>
+      <h2>All Five Seasons</h2>
+      <p class="structure-lede">Five stand-alone stories. Five different systems. Five different mechanisms of harm.</p>
+      <p class="structure-dna">Truth is always dressed in disguise. Survival requires reading the costume before confronting what wears it.</p>
+    </div>
 
-<!-- FEATURED SEASONS — DEVELOPMENT TEST -->
+    <div class="seasons-panel">
+      <div class="seasons-panel-head seasons-panel-head-clean">
+        <div>
+          <p class="eyebrow">The Five Seasons</p>
+          <h3>Five distinct genres, five escalating threats</h3>
+        </div>
+      </div>
+
+      <ul class="series-list">
+        <li class="series-item"><span class="series-n">S1</span><span class="series-title">Beware of What You Want<span class="series-engine">Fashion · Criminal exploitation</span></span><span class="series-year">1981–1990</span><span class="series-badge badge-genre">Psychological Suspense</span></li>
+        <li class="series-item"><span class="series-n">S2</span><span class="series-title">Zugzwang<span class="series-engine">Advertising · Corporate architecture</span></span><span class="series-year">1991–1999</span><span class="series-badge badge-genre">Corporate Thriller</span></li>
+        <li class="series-item"><span class="series-n">S3</span><span class="series-title">Blind Clarity<span class="series-engine">Logistics · Insider trading / unfair dismissal</span></span><span class="series-year">2001–2004</span><span class="series-badge badge-genre">Legal Thriller</span></li>
+        <li class="series-item"><span class="series-n">S4</span><span class="series-title">The Permit Trap<span class="series-engine">Local government · Bureaucratic obstruction</span></span><span class="series-year">2005–2009</span><span class="series-badge badge-genre">Bureaucratic Thriller</span></li>
+        <li class="series-item"><span class="series-n">S5</span><span class="series-title">Toxic Inheritance<span class="series-engine">Inheritance · Poisoning / murder</span></span><span class="series-year">2010–2015</span><span class="series-badge badge-genre">Institutional Horror</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- FEATURED SEASONS — DETAILED EXPLORATION -->
 <section id="season-one" class="season-feature">
   <div class="season-feature-copy">
     <div class="season-feature-kicker">
@@ -1706,9 +1743,9 @@ body { overflow-x: hidden; }
     </div>
     <h2>Toxic<br><em>Inheritance</em></h2>
     <span class="season-feature-meta">Inheritance &nbsp;·&nbsp; Poisoning / murder &nbsp;·&nbsp; 2010–2015</span>
-    <p>A farm property in Brisbane. A cattery operation. An inheritance offered in exchange for service — a simple transaction that becomes a curse. Abi and her family are advised to build a house on the property. They do. They move in. They begin to build a life. Then the poisoning begins. It arrives in the water from the borehole that feeds the house. Then in the washing powder. Then everywhere — sprayed across surfaces, contaminating the air, the soil, the infrastructure of home itself. The poison is glyphosate, the herbicide used to kill unwanted plants. It is being used to kill an unwanted family.</p>
-    <p>One person dies. Not in the household. Somewhere else. The poison has spread wider than the property. The family flees to save their lives. They abandon the property. It is sold. But the poisoned furniture remains — the physical evidence of what was done to them, wrapped and stored in a garage, protected as proof of a crime that no one will prosecute. The police are corrupt. The investigation goes nowhere. The people responsible walk free. The family sits with the evidence of their own poisoning, unable to use it, unable to move past it. An inheritance becomes a weapon. A gift becomes a trap.</p>
-    <p class="season-feature-closing">Survival means escape. But survival does not mean justice.</p>
+    <p>A Brisbane cattery owned by an elderly woman—one of four valuable properties in her name. When Celeste brilliantly manages the business and the old lady makes her heir, two men appear: the owner's brother and ex-boyfriend. They poison the borehole water. Celeste's husband Benedict builds a home on the property. His family drinks from that water and nearly dies. A cattery worker drinks from it and does die. Benedict installs a camera in his house. He captures the two men breaking in, searching, discovering the camera—caught on tape saying "oh shit" as evidence of their consciousness of guilt. The family flees with suitcases. The poisoned furniture sits in a garage, uncollected evidence. The property is sold. But the crime was never about the cattery—it was about controlling the elderly woman with dementia to steal her four properties worth millions.</p>
+    <p>Abi discovers what no one else pursued: the buried worker is evidence. Her body contains poison. The borehole can be tested. The camera footage can be recovered and authenticated. The will is locked in place because the old lady is unfit—the perpetrators tried to reverse that decision and failed. Now they've sold one property fraudulently and moved the old lady to Sydney, away from her community, fully under their control. Abi, educated in criminal law from years of institutional betrayal, fights across multiple legal battlefields: criminal prosecution for poisoning and homicide, elder abuse investigation, will verification, property protection, and exposure of systemic corruption. She discovers that the police are complicit, the magistrates refuse exhumation orders, the curator system can be cycled until the right corruptible official signs off on fraud. The system protects the perpetrators while a vulnerable woman remains exploited and a death goes unpunished.</p>
+    <p class="season-feature-closing">In her final battle with institutional deception, Abi learns that proof is not the same as justice. The system chooses not to see what the evidence irrefutably shows.</p>
   </div>
   <div class="season-feature-image">
     <div class="season-feature-stats">
@@ -1720,35 +1757,7 @@ body { overflow-x: hidden; }
 </section>
 
 <!-- ANTHOLOGY STRUCTURE — compact index retained below development sections -->
-<section id="season-index" class="structure-section season-index-lite">
-  <div class="structure-layout">
-    <div class="structure-intro">
-      <p class="eyebrow">The Deception Anthology</p>
-      <h2>Anthology Structure</h2>
-      <p class="structure-lede">Five stand-alone stories. Five different systems. Five different mechanisms of harm.</p>
-      <p class="structure-dna">Truth is always dressed in disguise. Survival requires reading the costume before confronting what wears it.</p>
-    </div>
 
-    <div class="seasons-panel">
-      <div class="seasons-panel-head seasons-panel-head-clean">
-        <div>
-          <p class="eyebrow">The Five Seasons</p>
-          <h3>Five distinct mechanisms</h3>
-        </div>
-      </div>
-
-      <ul class="series-list">
-        <li class="series-item"><span class="series-n">S1</span><span class="series-title">Beware of What You Want<span class="series-engine">Fashion · Criminal exploitation</span></span><span class="series-year">1981–1990</span><span class="series-badge badge-complete">Scripts Complete</span></li>
-        <li class="series-item"><span class="series-n">S2</span><span class="series-title">Zugzwang<span class="series-engine">Advertising · Corporate architecture</span></span><span class="series-year">1991–1999</span><span class="series-badge badge-complete">Scripts Complete</span></li>
-        <li class="series-item"><span class="series-n">S3</span><span class="series-title">Blind Clarity<span class="series-engine">Logistics · Insider trading / unfair dismissal</span></span><span class="series-year">2001–2004</span><span class="series-badge badge-reg">Framework Established</span></li>
-        <li class="series-item"><span class="series-n">S4</span><span class="series-title">The Permit Trap<span class="series-engine">Local government · Bureaucratic obstruction</span></span><span class="series-year">2005–2009</span><span class="series-badge badge-reg">Framework Established</span></li>
-        <li class="series-item"><span class="series-n">S5</span><span class="series-title">Toxic Inheritance<span class="series-engine">Inheritance · Poisoning / murder</span></span><span class="series-year">2010–2015</span><span class="series-badge badge-reg">Framework Established</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
   <p>© 2026 Johanna Marica Leiner — All rights reserved</p>
   <span class="footer-brand">The Deception Anthology</span>
