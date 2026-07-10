@@ -126,6 +126,42 @@ nav {
 
 .nav-links a:hover { color: var(--danger-red); }
 
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  width: 42px;
+  height: 42px;
+  margin-left: auto;
+  border: 1px solid var(--border-light);
+  background: transparent;
+  color: var(--cream);
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+nav.menu-open .nav-toggle span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+nav.menu-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+nav.menu-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+
 
 /* =============================================
    HERO — SECTION 01
@@ -1873,6 +1909,179 @@ body { overflow-x: hidden; }
 }
 
 
+
+
+/* =============================================
+   FINAL MOBILE OPTIMISATION PASS
+   ============================================= */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 820px) {
+  nav {
+    height: auto;
+    min-height: 60px;
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+    align-items: center;
+  }
+
+  .nav-brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.95rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.25rem 0 0.9rem;
+    margin-top: 0.15rem;
+    border-top: 1px solid var(--border);
+  }
+
+  nav.menu-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.8rem 0;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+
+  .btn-row {
+    width: 100%;
+  }
+
+  .btn-row .btn-gold,
+  .btn-row .btn-outline {
+    flex: 1 1 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .music-strip {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .music-label {
+    white-space: normal;
+  }
+
+  .series-item {
+    display: grid !important;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 0.35rem 0.85rem;
+    align-items: start;
+  }
+
+  .series-n {
+    grid-row: 1 / span 3;
+    width: auto;
+  }
+
+  .series-title,
+  .series-year,
+  .series-badge {
+    grid-column: 2;
+  }
+
+  .series-year,
+  .series-badge {
+    justify-self: start;
+  }
+
+  .season-feature-meta,
+  .feature-stat-value,
+  .hero-desc,
+  .structure-copy,
+  .season-feature-copy > p:not(.eyebrow):not(.season-feature-closing) {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .nav-brand {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-brand span {
+    display: none;
+  }
+
+  .hero-title,
+  .dna-copy .hero-title {
+    font-size: clamp(40px, 15vw, 56px) !important;
+  }
+
+  .hero-tagline,
+  .dna-copy .hero-tagline {
+    font-size: 18px !important;
+    line-height: 1.45;
+  }
+
+  .hero-desc,
+  .dna-copy .hero-desc,
+  .season-feature-copy > p:not(.eyebrow):not(.season-feature-closing) {
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+  }
+
+  .hero-spec-panel .spec-grid,
+  .season-feature-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-spec-panel .spec-cell,
+  .hero-spec-panel .spec-cell:nth-child(odd) {
+    border-right: none !important;
+  }
+
+  .music-player {
+    width: 100%;
+  }
+
+  .music-progress {
+    min-width: 0;
+  }
+
+  .season-feature-image .feature-stat-value.status-complete {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  }
+}
+
 </style>
 <link rel="icon" href="./favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="./assets/favicon_ml.png">
@@ -1884,7 +2093,8 @@ body { overflow-x: hidden; }
 <!-- NAV -->
 <nav>
   <a class="nav-brand" href="./anthology-dev.html">Johanna Marica Leiner <span>/ The Deception Anthology</span></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="site-menu">
     <li><a href="./anthology-dev.html" class="active">Anthology</a></li>
     <li><a href="./season1.html">Season One</a></li>
     <li><a href="./season2.html">Season Two</a></li>
@@ -2120,6 +2330,34 @@ body { overflow-x: hidden; }
     button.setAttribute('aria-label', 'Play Wild and Free');
     fill.style.width = '0%';
     time.textContent = '0:00';
+  });
+})();
+
+
+(function () {
+  var nav = document.querySelector('nav');
+  var toggle = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('site-menu');
+  if (!nav || !toggle || !menu) return;
+
+  function closeMenu() {
+    nav.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', function () {
+    var isOpen = nav.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (window.innerWidth <= 820) closeMenu();
+    });
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 820) closeMenu();
   });
 })();
 </script>
